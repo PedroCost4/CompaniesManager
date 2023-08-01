@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 6% 10%;
+    --foreground: 240 5% 84%;
+
+    --muted: 240 5% 26%;
+    --muted-foreground: 240 5% 65%;
+
+    --border: 262 83% 58%;
+    --input: 240 5% 84%;
+
+    --popover: 240 3.7% 15.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 240 5% 84%;
+
+    --secondary: 240 5% 26%;
+    --secondary-foreground: 240 5% 84%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 240 5% 84%;
+
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 240 5% 84%;
+
+    --ring: 252 95% 85%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
