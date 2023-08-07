@@ -7,12 +7,6 @@ datasource db {
   url      = "file:./dev.sqlite"
 }
 
-model Admin {
-  id    String  @id @default(cuid())
-  email String  @unique
-  name  String?
-}
-
 model Company {
   id           String   @id @default(cuid())
   name         String
@@ -27,6 +21,6 @@ model Company {
 model Office {
   id        String  @id @default(cuid())
   name      String
-  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
-  companyId String
+  company   Company? @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  companyId String?
 }
