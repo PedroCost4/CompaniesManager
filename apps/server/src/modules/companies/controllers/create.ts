@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { publicProcedure } from "../../../trpc";
-import { createCompany } from "../useCases/create";
+import { createCompany, verifyBusinessType } from "../useCases/create";
 
 export const createCompanyProcedure = publicProcedure
   .input(
@@ -13,6 +13,7 @@ export const createCompanyProcedure = publicProcedure
   )
   .mutation(async (opts) => {
     const { input } = opts;
+    verifyBusinessType(input.businessType);
     const company = await createCompany(input);
     return company;
   });
