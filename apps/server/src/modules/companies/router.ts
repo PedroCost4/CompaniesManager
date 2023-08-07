@@ -12,6 +12,6 @@ export type CompanyRouterOutputs = inferRouterOutputs<typeof companyRouter>;
 export const companyRouter = router({
     createCompany: createCompanyProcedure,
     getCompany: getCompanyProcedure,
-    listCompany: listCompanyProcedure,
+    listCompanies: listCompanyProcedure,
     updateCompany: updateCompanyProcedure,
 });
