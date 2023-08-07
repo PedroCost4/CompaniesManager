@@ -4,12 +4,10 @@ import { getCompany } from "../useCases/get";
 
 export const getCompanyProcedure = publicProcedure
   .input(
-    z.object({
-      id: z.string(),
-    })
+    z.string()
   )
   .query(async (opts) => {
     const { input } = opts;
-    const company = await getCompany(input.id);
+    const company = await getCompany(input);
     return company;
   });

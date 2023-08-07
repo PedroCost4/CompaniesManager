@@ -5,6 +5,9 @@ export const getCompany = async (id: string) => {
     where: {
       id,
     },
+    include : {
+      offices: true,
+    }
   });
   return company;
 };
